@@ -7,6 +7,8 @@ launching a command.
 Usage
 -----
 
+Just add the following in your .xinitrc (if you are not using Gentoo) or other configuration file used to start your WM.
+
 ```bash
 hotkey /dev/input/event5
 # To get the hex code behind the keyboard input one
