@@ -10,9 +10,9 @@ Usage
 Just add the following in your .xinitrc (if you are not using Gentoo) or other configuration file used to start your WM. Start `hotkey` with **&** at the end (**hotkey /dev/input/event5 &**)
 
 ```bash
-hotkey /dev/input/event5
+sudo hotkey /dev/input/event5
 # To get the hex code behind the keyboard input one
-printev /dev/input/event5
+sudo printev /dev/input/event5
 ```
 
 Dependencies
@@ -24,7 +24,7 @@ keyboard.
 Configuration
 -------------
 
-Edit the `config.h` file to your heart's desire. It contains a few examples and
+Edit the `hotkey.c` file to your heart's desire. It contains a few examples and
 an explanation of what the options mean. The configuration gets compiled into
 the binary, which keeps the code simple and makes startup quick and secure.
 
@@ -59,7 +59,9 @@ Author and copyright
 --------------------
 
 Hotkey is Copyright (C) 2014 Wiktor W Brodlo.
-Hotkey development continues under my (**su8**) repository too
+
+Hotkey development continues under my (**su8**) repository too.
+
 The files in the openrc directory are released under the GNU GPL version 2, as
 required by Gentoo.
 
