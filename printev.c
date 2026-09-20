@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
   int fd;
   struct input_event ev;
   if (argc != 2) { printf("Usage: %s <evdev>\ne.g. /dev/input/event5\n", argv[0]); return EXIT_FAILURE; }
-  if ((fd = open(argv[1], O_RDONLY)) == -1) { err(2, "open %s", argv[1]); }
+  if ((fd = open(argv[1], O_RDONLY | O_NONBLOCK)) == -1) { err(2, "open %s", argv[1]); }
   while (1) {
     read(fd, &ev, sizeof ev);
     if (ev.type == EV_KEY) { printf("code: 0x%x, value: 0x%x\n", ev.code, ev.value); }
