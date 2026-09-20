@@ -1,5 +1,5 @@
 /*
- * Copyright 09/20/2026, 08/04/2026 https://github.com/su8/0verlaunch
+ * Copyright 09/20/2026 https://github.com/su8/0verlaunch
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -43,6 +43,7 @@ const size_t nevents = sizeof(events) / sizeof(events[0]);
 int main(int argc, char *argv[]) {
   struct input_event ev;
 	size_t x;
+	if (argc != 2) { printf("Usage: %s <evdev>\ne.g. /dev/input/event5\n", argv[0]); return EXIT_FAILURE; }
   int fd = open(argv[1], O_RDONLY | O_NONBLOCK);
   if (fd == -1) { perror("open"); return EXIT_FAILURE; }
   while (1) {
