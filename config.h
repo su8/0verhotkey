@@ -15,6 +15,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301, USA.
  */
+typedef char *const command;
+struct event {
+  uint16_t code;
+  int32_t value;
+  command *cmd;
+};
 
 /* Commands to run */
 command mute[] = {(char *const)"amixer", (char *const)"set", (char *const)"Master", (char *const)"toggle", NULL};

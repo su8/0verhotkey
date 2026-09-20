@@ -28,17 +28,7 @@
 #include <sys/stat.h>
 #include <linux/input.h>
 
-typedef char *const command;
-
-struct event {
-	uint16_t code;
-	int32_t value;
-	command *cmd;
-};
-
 #include "config.h"
-
-const size_t nevents = sizeof(events) / sizeof(events[0]);
 
 int main(int argc, char *argv[]) {
   struct input_event ev;
@@ -48,7 +38,7 @@ int main(int argc, char *argv[]) {
   if (fd == -1) { perror("open"); return EXIT_FAILURE; }
   while (1) {
     read(fd, &ev, sizeof(ev));
-    for (x = 0; x < nevents; x++) {
+    for (x = 0; x < sizeof(events) / sizeof(events[0]); x++) {
       if (ev.code == events[x].code && ev.value == events[x].value && ev.type == EV_KEY &&
           #if DELAY
           !usleep(DELAY) &&
