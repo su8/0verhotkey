@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
   struct input_event ev;
   if (argc != 2) {
     printf("Usage: %s <evdev>\ne.g. /dev/input/event5\n", argv[0]);
-    return EXIT_SUCCESS;
+    return EXIT_FAILURE;
   }
   if ((fd = open(argv[1], O_RDONLY)) == -1) { err(2, "open %s", argv[1]); }
   while (1) {
