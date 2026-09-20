@@ -7,12 +7,12 @@ launching a command.
 Usage
 -----
 
-Just add the following in your .xinitrc (if you are not using Gentoo) or other configuration file used to start your WM.
+Just add the following in your .xinitrc (if you are not using Gentoo) or other configuration file used to start your WM. Start `hotkey` with **&** at the end (**hotkey /dev/input/event5 &**)
 
 ```bash
 hotkey /dev/input/event5
 # To get the hex code behind the keyboard input one
-printev /dev/input/even5
+printev /dev/input/event5
 ```
 
 Dependencies
