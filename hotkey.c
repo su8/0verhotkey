@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
   int fd = open(argv[1], O_RDONLY | O_NONBLOCK);
   if (fd == -1) { perror("open"); return EXIT_FAILURE; }
   while (1) {
-    read(fd, &ev, sizeof(ev));
+    (void)read(fd, &ev, sizeof(ev));
     for (x = 0; x < sizeof(events) / sizeof(events[0]); x++) {
       if (ev.code == events[x].code && ev.value == events[x].value && ev.type == EV_KEY &&
           #if DELAY
