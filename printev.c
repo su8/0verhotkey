@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
   while (1) {
     read(fd, &ev, sizeof ev);
     if (ev.type == EV_KEY) { printf("code: 0x%x, value: 0x%x\n", ev.code, ev.value); }
-	  fflush(stdout);
+    fflush(stdout);
   }
   return EXIT_SUCCESS;
 }

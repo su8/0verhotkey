@@ -48,15 +48,16 @@ int main(int argc, char *argv[]) {
   if (fd == -1) { perror("open"); return EXIT_FAILURE; }
   while (1) {
     read(fd, &ev, sizeof(ev));
-    for (x = 0; x < nevents; x++)
+    for (x = 0; x < nevents; x++) {
       if (ev.code == events[x].code && ev.value == events[x].value && ev.type == EV_KEY &&
           #if DELAY
           !usleep(DELAY) &&
           #endif
-			    !fork()) {
+          !fork()) {
         close(fd);
         execvp(events[x].cmd[0], events[x].cmd);
         err(1, "execvp");
+      }
     }
     fflush(stdout);
   }
