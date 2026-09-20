@@ -17,9 +17,9 @@
  */
 
 /* Commands to run */
-command mute[] = {"amixer", "set", "Master", "toggle", NULL};
-command voldn[] = {"amixer", "set", "Master", "1%-", NULL};
-command volup[] = {"amixer", "set", "Master", "1%+", NULL};
+command mute[] = {(const char *)"amixer", (const char *)"set", (const char *)"Master", (const char *)"toggle", NULL};
+command voldn[] = {(const char *)"amixer", (const char *)"set", (const char *)"Master", (const char *)"1%-", NULL};
+command volup[] = {(const char *)"amixer", (const char *)"set", (const char *)"Master", (const char *)"1%+", NULL};
 
 /*
  * Rules
