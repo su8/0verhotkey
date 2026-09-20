@@ -42,8 +42,8 @@ const size_t nevents = sizeof(events) / sizeof(events[0]);
 
 int main(int argc, char *argv[]) {
   struct input_event ev;
-	size_t x;
-	if (argc != 2) { printf("Usage: %s <evdev>\ne.g. /dev/input/event5\n", argv[0]); return EXIT_FAILURE; }
+  size_t x;
+  if (argc != 2) { printf("Usage: %s <evdev>\ne.g. /dev/input/event5\n", argv[0]); return EXIT_FAILURE; }
   int fd = open(argv[1], O_RDONLY | O_NONBLOCK);
   if (fd == -1) { perror("open"); return EXIT_FAILURE; }
   while (1) {
@@ -58,7 +58,7 @@ int main(int argc, char *argv[]) {
         execvp(events[x].cmd[0], events[x].cmd);
         err(1, "execvp");
     }
-		fflush(stdout);
+    fflush(stdout);
   }
   return EXIT_SUCCESS;
 }
