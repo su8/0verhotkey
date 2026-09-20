@@ -4,6 +4,15 @@ HOTKEY
 Hotkey is a simple program that listens on an evdev input device and reacts by
 launching a command.
 
+Usage
+-----
+
+```bash
+hotkey /dev/input/event5
+# To get the hex code behind the keyboard input one
+printev /dev/input/even5
+```
+
 Dependencies
 ------------
 
