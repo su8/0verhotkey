@@ -36,5 +36,5 @@ int main(int argc, char *argv[]) {
     if (ev.type == EV_KEY) { printf("code: 0x%x, value: 0x%x\n", ev.code, ev.value); }
 	  fflush(stdout);
   }
-	return EXIT_SUCCESS;
+  return EXIT_SUCCESS;
 }
